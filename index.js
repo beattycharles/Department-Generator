@@ -28,12 +28,12 @@ inquirer
     },
 ])
 //save anwsers for use in html.
-.then((anwers) => {
+.then((responce) => {
     const memberAnswer = []
-    memberAnswer.push(answers)
+    memberAnswer.push(responce)
         console.log(memberAnswer)
 
-        if (anwers.members === "Engineer"){
+        if (members === "Engineer"){
             inquirer
             .prompt([
                 {
@@ -61,7 +61,7 @@ inquirer
             memberAnswer.push(answers)
             console.log(memberAnswers)
         }
-         else if (anwers.members === 'Intern') {
+         else if (members === 'Intern') {
             inquirer
             .prompt([
                 {
