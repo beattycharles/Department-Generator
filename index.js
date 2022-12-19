@@ -1,6 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 let employeeInfo = [];
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+const {generateHtml} = template
+const template = require('./src/template.js')
 
 console.log('Get ready to build your team!');
 //prompt list for input
@@ -23,13 +28,12 @@ inquirer
     message: 'Whats Mangers office number?'
     },
 ])
-
-.then((responce) => {
-    const managerAnswer = []
-    managerAnswer.push(responce)
-        console.log(managerAnswer)
+.then((answers) => {
+   let managerInfo = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+   employeeInfo.push(managerInfo);
         addMember();
 });
+
 //function for  adding Member
         function addMember(){
             inquirer
@@ -111,14 +115,15 @@ inquirer
             },
             ])
             .then((anwsers) => {
-                let internInfo = new Inter(anwsers.internName, anwsers.internId, anwsers.internEmail, anwsers.internSchool)
+                let internInfo = new Intern (anwsers.internName, anwsers.internId, anwsers.internEmail, anwsers.internSchool)
                 employeeInfo.push(internInfo)
                 addMember();
             })};
         
     // when done adding members make hmtl file
         function genHtml(){
-            const html = gererateHtml(employeeInfo);
-           fs.writeFile('./dist/team.html', html, (err) =>
-           err ? console.log(err) : console.log('Profiles have been made for your team!')
-           )};
+            let html = generateHtml(employeeInfo);
+        fs.writeFile('./dist/team.html', html, (err) =>
+        err ? console.log(err) : console.log('Profiles have been made for your team!')
+        )
+    };
