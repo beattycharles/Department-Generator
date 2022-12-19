@@ -4,8 +4,8 @@ let employeeInfo = [];
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
-const {generateHtml} = template
 const template = require('./src/template.js')
+const { generateHtml } = template
 
 console.log('Get ready to build your team!');
 //prompt list for input
@@ -79,7 +79,7 @@ inquirer
                 {
                     type: 'input',
                     name: 'engGithub',
-                    message: 'Engineers Github?'
+                    message: 'Engineers Github name?'
                 },
             ])
             .then((anwsers) => {

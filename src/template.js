@@ -1,6 +1,6 @@
 function generateCard(employeeInfo) {
   let employeesHtml = "";
-  for (let i = 0; i < employeeArr.length; i++) {
+  for (let i = 0; i < employeeInfo.length; i++) {
     const htmlGeneratedName = `<div class = "top"><h2>${employeeInfo[
       i
     ].getName()}</h2> </div>`;
@@ -16,23 +16,17 @@ function generateCard(employeeInfo) {
     ].getId()}</p></div>`;
     employeesHtml += htmlGeneratedId;
 
-    const htmlGeneratedEmail = `<div><a href="mailto:${employeeInfo[
-      i
-    ].getEmail()}">Email: ${employeeInfo[i].email}</a></div>`;
+    const htmlGeneratedEmail = `<div><a href="mailto:${employeeInfo[i].getEmail()}"> Email:${employeeInfo[i].getEmail()}</a></div>`;
     employeesHtml += htmlGeneratedEmail;
 
     if (employeeInfo[i].officeNumber !== undefined) {
-      const htmlGeneratedOfficeNum = `<div class = "bottom"><p>Office #: ${employeeInfo[i].officeNumber}</p> </div>`;
+      const htmlGeneratedOfficeNum = `<div><p>Office #: ${employeeInfo[i].officeNumber}</p> </div>`;
       employeesHtml += htmlGeneratedOfficeNum;
     } else if (employeeInfo[i].github !== undefined) {
-      const htmlGeneratedGithub = `<div class = "bottom"><a href = "https://github.com/${employeeInfo[
-        i
-      ].getGithub()}" target = "_blank" rel="noopener noreferrer">GitHub profile: ${employeeInfo[
-        i
-      ].getGithub()}</a> </div>`;
+      const htmlGeneratedGithub = `<div><a href = "https://github.com/${employeeInfo[i].getGithub()}" target = "_blank" rel="noopener noreferrer">GitHub profile:${employeeInfo[i].getGithub()}</a> </div>`;
       employeesHtml += htmlGeneratedGithub;
     } else if (employeeInfo[i].school !== undefined) {
-      const htmlGeneratedSchool = `<div class = "bottom"><p>School: ${employeeInfo[
+      const htmlGeneratedSchool = `<div><p>School: ${employeeInfo[
         i
       ].getSchool()}</p></div>`;
       employeesHtml += htmlGeneratedSchool;
