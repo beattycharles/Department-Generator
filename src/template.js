@@ -16,14 +16,16 @@ function generateCard(employeeInfo) {
     ].getId()}</p></div>`;
     employeesHtml += htmlGeneratedId;
 
-    const htmlGeneratedEmail = `<div><a href="mailto:${employeeInfo[i].getEmail()}"> Email:${employeeInfo[i].getEmail()}</a></div>`;
+    const htmlGeneratedEmail = `<div><a href="mailto:${employeeInfo[
+      i
+    ].getEmail()}"> Email the team Member</a></div>`;
     employeesHtml += htmlGeneratedEmail;
 
     if (employeeInfo[i].officeNumber !== undefined) {
       const htmlGeneratedOfficeNum = `<div><p>Office #: ${employeeInfo[i].officeNumber}</p> </div>`;
       employeesHtml += htmlGeneratedOfficeNum;
     } else if (employeeInfo[i].github !== undefined) {
-      const htmlGeneratedGithub = `<div><a href = "https://github.com/${employeeInfo[i].getGithub()}" target = "_blank" rel="noopener noreferrer">GitHub profile:${employeeInfo[i].getGithub()}</a> </div>`;
+      const htmlGeneratedGithub = `<div><a href = "https://github.com/${employeeInfo[i].getGithub()}" target = "_blank" rel="noopener noreferrer">Link to Engineer's GitHub</a> </div>`;
       employeesHtml += htmlGeneratedGithub;
     } else if (employeeInfo[i].school !== undefined) {
       const htmlGeneratedSchool = `<div><p>School: ${employeeInfo[

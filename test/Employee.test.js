@@ -20,8 +20,8 @@ const Employee = require("../lib/employee");
     });
 
     it("Get role of the employee", () => {
-     const employeeRole = "Employee";
-     const fakeEmployee = new Employee("charlie", 1, "no@no.com");
-     expect(fakeEmployee.getRole()).toBe(employeeRole);
+    const employeeRole = "Employee";
+    const fakeEmployee = new Employee("charlie", 1, "no@no.com");
+    expect(fakeEmployee.getRole()).toBe(employeeRole);
     });
   });
