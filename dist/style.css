@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: dimgray;
+}
+
+header {
+    background-color: deeppink;
+    text-align: center;
+    height: 100%;
+}
+
+h1, h2, h3 {
+    color: black;
+    text-align: center; 
+    height: 50%;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    background-color: rgb(109, 130, 197);
+    font-size: 40px;
+}
+
+h3 {
+    color: black;
+    font-size: 30px;
+}
+
+div {
+    text-align: center;
+    height: max-content;
+}
+
+p, a {
+    font-size: 25px;
+}
+
+.top {
+    border-top: 5px ;
+    border-top-color: rgb(18, 9, 150);
+    border-top-style: solid;
+}
